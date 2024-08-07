@@ -1,7 +1,21 @@
 # Random-Image-API
-简单搭建本地或外链随机图片API，可选是否检查Referer
 
+简单搭建外链随机图片API，支持Referer检查、可选API链接端CORS错误处理，并且直接返回图片内容。使用者可以在浏览器中查看图片，同时隐藏实际的外链图片存储地址。
 
+## 功能特点
+简单搭建外链随机图片API，仅需要上传两个文件，可选是否检查Referer
+在API链接端解决CORS错误
+直接返回图片内容，可在浏览器中查看图片且隐藏外链图片存储链接
+
+## 文件结构
+image.txt：每行填入一个图片外链。
+index.php：实现API逻辑，返回随机图片。
+
+## 使用方法
+1. 分别创建一个例如`image.txt`和`index.php`的文件，使用`index.php`命名，可使用域名直接访问API。
+2. 在`image.txt`文件中每行填入一个图片外链。
+3. 在index.php文件中填写以下示例代码，并根据需求进行调整。
+4. 将txt和php文件上传至网站目录下
 
 ## 不需要检查Referer
 ```
@@ -32,7 +46,7 @@ echo $imageContent;
 ## 检查Referer
 ```
 <?php
-// 检查请求的 Referer 头
+// 检查请求的 Referer 头，将 'https://www.makurasho.com' 修改为你需要的访问链接
 $allowedReferer = 'https://www.makurasho.com';
 if (isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], $allowedReferer) === 0) {
 
