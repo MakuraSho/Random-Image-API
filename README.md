@@ -1,6 +1,9 @@
 # Random-Image-API
 简单搭建本地或外链随机图片API，可选是否检查Referer
 
+
+
+## 不需要检查Referer
 ```
 <?php
 header("Access-Control-Allow-Origin: *");
@@ -26,7 +29,7 @@ header("Content-Type: $imageMimeType");
 echo $imageContent;
 ?>
 ```
-
+## 检查Referer
 ```
 <?php
 // 检查请求的 Referer 头
