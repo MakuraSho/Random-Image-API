@@ -25,7 +25,7 @@
 
 ## 不需要检查Referer
 
-```
+```php
 <?php
 header("Access-Control-Allow-Origin: *");
 header('Pragma: no-cache');
@@ -53,7 +53,7 @@ echo $imageContent;
 
 ## 检查Referer
 
-```
+```php
 <?php
 // 检查请求的 Referer 头，将 'https://www.makurasho.com' 修改为你需要的访问链接
 $allowedReferer = 'https://www.makurasho.com';
